@@ -49,17 +49,18 @@ function errorNotiflix() {
 
 function markupCurrentBreed(data) {
   const markup = el => {
-    return `<img class="cat-img" src="${el.url}" alt="${el.breeds[0].name}" >
-        <div class="cat-text">
-        <h1 class="cat-header">${el.breeds[0].name}</h1>
-        <p>${el.breeds[0].description}</p>
-        <p><span><b>Temperament: </b></span>${el.breeds[0].temperament}</p>
-        </div>`;
+    return ` 
+ <img class="cat-img" src="${el.url}" alt="${el.breeds[0].name}" >
+ <div class="cat-text">
+ <h1 class="cat-header">${el.breeds[0].name}</h1>
+ <p>${el.breeds[0].description}</p>
+ <p><span><b>Temperament: </b></span>${el.breeds[0].temperament}</p>
+ </div>`;
   };
 
   catInfoRef.innerHTML = markup(data[0]);
   loaderRef.classList.add('hidden');
-  catInfoRef.classList.add('hidden');
+  catInfoRef.classList.remove('hidden');
 }
 
 function markupBreedsSelect(data) {
